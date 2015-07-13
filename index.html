@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Planner</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="continer">
+
+
+		<div class="row section intro">
+			<div class="col-xs-2"></div>
+			<div class=" col-xs-8">
+				<h1>PROJECT PLANNER</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+			<div class="col-xs-2"></div>
+		</div>
+
+		<div class="row navi">
+			
+			<div class="col-xs-12">
+				<nav class="col-xs-4 left">
+					<ul>
+						<li class="add-project-btn"><i class="fa fa-plus-circle block nav-icon"></i>add project</li>
+					</ul>
+				</nav>
+				<nav class="col-xs-8 right">
+					<ul>
+						<li class="projects-btn"><i class="fa fa-pencil block nav-icon"></i>projects</li>
+						<li class="shop-list-btn"><i class="fa fa-list-ul block nav-icon"></i>shopping list</li>
+						<li class="budget-btn"><i class="fa fa-money block nav-icon"></i>budget</li>
+					</ul>
+				</nav>
+				
+			</div>
+		</div>
+
+	<section class="container main">
+		<div class="row list"><!-- shopping list start -->
+			<h2>SHOPPING LIST</h2>
+			<div class="row shopping-list">
+				<div class="col-xs-11 list-block">
+					<h3>List Item</h3>
+				</div>
+				<div class="col-xs-1 list-block">
+					<i class="fa fa-square-o chkbx"></i>
+				</div>
+			</div>
+			<div class="row shopping-list">
+
+				<div class="col-xs-11 list-block">
+					<h3>List Item</h3>
+				</div>
+				<div class="col-xs-1 list-block">
+					<i class="fa fa-square-o chkbx"></i>
+				</div>
+			</div>
+		</div>
+
+		<div class="row new-project-form"><!-- new project form start -->
+			<div class="container">
+				<h2>NEW PROJECT</h2>
+				<form class="form-horizontal">
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Project Name</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control proj-name" placeholder="Project Name (i.e Master Bedroom, Garden, etc.)">
+						</div>
+					</div>
+					<div class="form-group form-inline">
+						<label class="col-sm-2 control-label" >Amount (in dollars)</label>
+						<div class="col-sm-10">
+							<div class="input-group">
+								<div class="input-group-addon">$</div>
+								<input type="text" class="form-control proj-budget"  placeholder="Amount">
+								<div class="input-group-addon">.00</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputPriority" class="col-sm-2 control-label">Priority</label>
+						<div class="col-sm-10">
+							<div class="btn-group">
+									<button type="button" class="btn btn-default proj-priority">Select One</button>
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Low Priority</a></li>
+										<li><a href="#">Medium Priority</a></li>
+										<li><a href="#">High Priority</a></li>
+									</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Task</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control proj-task" placeholder="Task (i.e. Paint, Buy Furniture, Hang Décor, etc.)">
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="col-sm-2">
+						</div>
+						<div class="col-sm-10">
+							<i class="fa fa-plus-circle"></i> Add another task 
+						</div>
+					</div>
+					
+				
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-custom btn-md submit-project">Add Project</button>
+					    </div>
+					</div>
+				</form>
+			
+			</div>
+		</div> <!-- new project form end-->
+	<!-- <div class="row shopping-list"><!-- shopping list start --
+		<div class="col-xs-12 project-block">
+		<h2 class="proj-title">Project Title</h2>
+		</div> -->
+	</section>
+
+	</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="main.js"></script>
+
+</body>
+</html>

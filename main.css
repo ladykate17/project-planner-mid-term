@@ -1,0 +1,105 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic);
+
+body {
+	font-family: 'Lato', sans-serif;
+	/*color: white;*/
+	box-sizing: border-box;
+}
+
+.section{
+	padding: 40px 0px;
+}
+
+.block {
+	display: block;
+	padding: 10px;
+}
+
+ul li{
+	text-align: center;
+	display: inline-block;
+	font-size: 12px;
+	margin: 10px;
+}
+
+.btn-custom {
+	background-color: #CB9512;
+	color: white;
+}
+
+/*.navi {
+	background-color: #333;
+	color: white;
+}*/
+
+.nav-icon{
+	font-size: 35px;
+}
+
+.left {
+	background-color: #7FD1CE;
+	color: white;
+}
+
+.right {
+	background-color: #568EFF;
+	color: white;
+}
+
+.intro{
+	background-color: #B51267;
+	color: white;
+}
+
+.new-project-form{
+	display: none;
+}
+
+.add-project:hover{
+	color: #CB9512;
+}
+
+.project-block {
+	background-color: #DFDFDF;
+	border-left: 4px solid #B51267;
+	box-shadow: 2px 2px 2px #CCC;
+	margin: 5px 0px;
+}
+
+.proj-title {
+	font-weight: 300;
+
+
+}
+
+.collapse-caret {
+	margin: 12px 0px;
+	font-size: 26px;
+	color: #999;
+}
+
+.collapse-caret:hover {
+	color: #568EFF; /*deep blue */
+
+}
+
+.list{
+	display: none;
+}
+
+.shopping-list{
+	background-color: #DFDFDF;
+	box-shadow: 2px 2px 2px #CCC;
+	font-weight: 300;
+
+}
+.list-block {
+	border-bottom: 1px solid #CCC;
+}
+
+.chkbx {
+	/*margin: 12px 0px;*/
+	font-size: 26px;
+	color: #999;
+}
+
