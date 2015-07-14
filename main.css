@@ -47,6 +47,7 @@ ul li{
 }
 
 .intro{
+	/*background-image: url('http://i.istockimg.com/file_thumbview_approve/58593320/6/stock-photo-58593320-office-desk-table-with-computer-supplies-and-flower.jpg');*/
 	background-color: #B51267;
 	color: white;
 }
@@ -102,4 +103,5 @@ ul li{
 	font-size: 26px;
 	color: #999;
 }
+
 
