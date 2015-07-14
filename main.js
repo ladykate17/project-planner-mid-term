@@ -17,9 +17,20 @@ $(document).on('ready', function() {
 		return this.el
 	}
 
+
 	var Task = function(description){
 		this.description = description;
 	}
+
+	Task.prototype.create = function(){
+		var $taskRow = $('<div class="row task-block"><div class="offset-2 col-xs-10 text-block">' + this.description + '</div></div>');
+
+		this.el = $taskRow
+
+		return this.el
+ 
+	}
+
 
 	$(".dropdown-menu li a").click(function(){ // make dropdown button behave like select-dropdown
 		var selText = $(this).text();
@@ -37,16 +48,22 @@ $(document).on('ready', function() {
 		var name = $('.proj-name').val();
 		var priority = $('.proj-priority').text();
 		var budget = $('.proj-budget').val();
-		var description = $('.proj-task').val(); 
+		var description = $('.proj-task').val();
+		var tasks = description.toString()
+
 		// console.log(description)
-		var setTask = new Task(description);
-		var setProject = new Project(name, priority, budget);
+		// var newTask = new Task(description);
+		// console.log(newTask);
+
+		var newProject = new Project(name, priority, budget, tasks);
+		console.log(newProject);
 
 		$('input').val('');
-		$('.main').last().append(setProject.create());
-		$('.proj-title').append(name);
-		console.log('project: ', name, '\npriority: ', priority, '\nbudget: ', budget, '\ntasks: ', description)
-
+		$('.main').last().append(newProject.create());
+		$('.proj-title').last().append(name);
+		$('.project').last().append('<p class="proj-sub-info"><strong>Priority Level:</strong> ' + priority + ' <strong>Budget for this Project:</strong> $' + budget + '.00</p>');
+		// console.log('project: ', name, '\npriority: ', priority, '\nbudget: ', budget, '\ntasks: ', description)
+		console.log(AllProjects)
 	})
 
 	var counter = 1; // this starts at 1 because index 0 is preloaded
@@ -54,7 +71,7 @@ $(document).on('ready', function() {
 	$('.add-task').on('click', function(){
 		counter++
 		// console.log('counter ', counter);
-		var taskInput = '<div class="form-group"><div class="col-sm-offset-2 col-sm-10"><input data-id="' + counter + '" type="text" class="form-control proj-task" placeholder="Task (i.e. Paint, Buy Furniture, Hang Décor, etc.)"></div></div>';
+		var taskInput = '<div class="form-group"><div class="col-sm-offset-2 col-sm-9"><input data-id="' + counter + '" type="text" class="form-control proj-task" placeholder="Task (i.e. Paint, Buy Furniture, Hang Décor, etc.)"></div><div class="col-sm-1"><i class="fa fa-times-circle x-out chkbx"></i></div></div>';
 
 		$(this).closest('.form-group').before(taskInput);
 
@@ -64,10 +81,9 @@ $(document).on('ready', function() {
 	$(document).on('click', '.collapse-caret', function(){
 
 		$(this).removeClass('fa-chevron-circle-left').addClass('fa-chevron-circle-down');
-		$(this).parent('.text-block').append('To Do:') //this isn't functioning correctly
+		$(this).siblings('.project').append('<h3>Tasks:</h3>' + AllProjects[0].tasks) //newTask is out of scope - this isn't functioning correctly
 	})
 	
-	// console.log(AllProjects)
 
 	// // --- Shopping List --- //  I'll come back to this
 	// var ListItem = $
