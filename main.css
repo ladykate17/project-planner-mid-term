@@ -1,9 +1,23 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic);
 
 body {
+/*	background-image: url('http://i.istockimg.com/file_thumbview_approve/58593320/6/stock-photo-58593320-office-desk-table-with-computer-supplies-and-flower.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+*/
 	font-family: 'Lato', sans-serif;
 	/*color: white;*/
 	box-sizing: border-box;
+}
+
+h1 {
+	font-size: 42px;
+	font-weight: 300;
+	padding: 20px 0px 10px;
+}
+
+h2 {
+	padding: 20px;
 }
 
 .section{
@@ -13,6 +27,10 @@ body {
 .block {
 	display: block;
 	padding: 10px;
+}
+
+.inline{
+	display: inline-block;
 }
 
 ul li{
@@ -27,32 +45,67 @@ ul li{
 	color: white;
 }
 
-/*.navi {
-	background-color: #333;
+.navi {
+	display: none;
 	color: white;
-}*/
+}
 
 .nav-icon{
 	font-size: 35px;
+	padding: 0px 20px;
+}
+.nav-icon-sm{
+	font-size: 25px;
+	padding: 0px 10px;
 }
 
-.left {
-	background-color: #7FD1CE;
-	color: white;
-}
-
-.right {
+.sub-navi{
 	background-color: #568EFF;
-	color: white;
+}
+
+.navi-full{
+	background-color: #7FD1CE;
+	text-align: center;
+}
+
+.navi-left {
+	background-color: #7FD1CE;
+	border-right: 10px solid rgba(0, 0, 0, 0.1);
+	text-align: right;
+}
+
+.navi-right {
+	background-color: #568EFF;
+	text-align: left;
 }
 
 .intro{
+	background-image: url('http://i.istockimg.com/file_thumbview_approve/58593320/6/stock-photo-58593320-office-desk-table-with-computer-supplies-and-flower.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
 	background-color: #B51267;
+}
+
+.intro-text{
+	top: 25%;
+	text-align: center;
 	color: white;
 }
 
+/*.padding{
+	padding: 50px;
+}*/
+.hide-form{
+	color: #999;
+	font-size: 12px;
+	text-align: right;
+	padding: 10px;
+}
 .new-project-form{
 	display: none;
+	height: 90vh;
+	background-color: rgba(255, 255, 255, 0.9);
 }
 
 .add-project:hover{
@@ -68,8 +121,6 @@ ul li{
 
 .proj-title {
 	font-weight: 300;
-
-
 }
 
 .collapse-caret {
@@ -101,5 +152,14 @@ ul li{
 	/*margin: 12px 0px;*/
 	font-size: 26px;
 	color: #999;
+}
+
+.ex-pad{
+	padding: 0px 40px;
+}
+
+.border-btn{
+	background-color: transparent;
+	color: white;
 }
 
