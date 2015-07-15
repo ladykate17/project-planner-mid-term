@@ -53,29 +53,12 @@
 		</div>
 
 	<section class="container main">
+
 		<div class="row list"><!-- shopping list start -->
 			<h2>SHOPPING LIST</h2>
-<<<<<<< HEAD
-			<div class="col-xs-offset-1 col-xs-10">
-				<div class="row shopping-list">
-					<div class="col-xs-offset-1 col-xs-10 list-block">
-						<h3>List Item</h3>
-						<i class="fa fa-square-o chkbx"></i>
-					</div>
-=======
-			<div class="row shopping-list">
 
-				<div class="col-xs-11 list-block">
-					<h3>List Item</h3>
-				</div>
-				<div class="col-xs-1 list-block">
-					<i class="fa fa-square-o chkbx"></i>
->>>>>>> a99058ddc5adf09cdb46d6f536c3e14b6178f428
-				</div>
-			</div>
-			
 		</div>
-		
+
 		<div class="row new-project-form"><!-- new project form start -->
 			<div class="container-fluid ex-pad">
 				<div class="hide-form">[hide form]</div>
@@ -120,13 +103,15 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Task</label>
 						<div class="col-sm-10">
-							<input data-id="0" type="text" class="form-control proj-task" placeholder="Task (i.e. Paint, Buy Furniture, Hang Décor, etc.)">
+							<input type="text" class="form-control proj-task" placeholder="Task (i.e. Paint, Buy Furniture, Hang Décor, etc.)">
 						</div>
 					</div>
 
 
 					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10 add-task">
+						<div class="col-sm-2">
+						</div>
+						<div class="col-sm-10 add-task">
 							<i class="fa fa-plus-circle"></i> Add another task 
 						</div>
 					</div>
@@ -141,15 +126,80 @@
 			
 			</div>
 		</div> <!-- new project form end-->
-	<!-- <div class="row shopping-list"><!-- shopping list start --
-		<div class="col-xs-12 project-block">
-		<h2 class="proj-title">Project Title</h2>
-		</div> -->
+
+		<!-- Event Post Template 
+		<script id="event-post-template" type="text/x-handlebars-template">
+			<div class="community-event">
+				<h3 class="event-title">{{postTitle}}</h3>
+				<p class="event-description">{{postDescription}}</p>
+				<p class="event-date">Date: {{postDate}}  <br> Time: {{postTime}}</p>
+				<a href="https://meetup.com" class="event-url">{{postUrl}}</a>
+				<div class="row row-top-margin">
+					<div class="col-xs-4">
+						<a class="user-hashtag" href="https://google.com">@jamiebinns</a>
+					</div>
+					<div class="col-xs-4"></div>
+					<div class="col-xs-4 content-likes"><i data-id={{dataId}} class="fa fa-heart-o fa-lg heart-like animated bounce"></i><span class="like-span">{{likes}} Likes</span></div>
+				</div>
+				<div class="break-div"></div>
+			</div>
+		</script>-->
+		
+		<!-- PROJECT BLOCK TEMPLATE -->
+		<script id="project-block-template" type="text/x-handlebars-template">
+			<div class="row project-block">
+				<div class="col-xs-12 text-block">
+					<div class="col-xs-11 project">
+						<h2 class="proj-title">{{name}}</h2>
+						<p class="proj-sub-info"><strong>Priority Level: </strong>{{priority}}</p> <strong>Budget for this Project: </strong>${{budget}}.00</p>
+						<div class="row">
+							<div class="col-xs-12">
+								<h3 class="task-title">Tasks:</h3>
+							</div>
+						</div>
+						<div class="row tasks">
+						// 	<div class="col-xs-offset-1 col-xs-9 task-line">{{tasks}}
+						// 	</div>
+						// 	<div class="col-xs-1">
+						// 		<i class="fa fa-times-circle hide-input"></i>
+						// 	</div>
+						</div>
+					</div>
+					<div class="col-xs-1 collapse-caret">
+						<i class="fa fa-chevron-circle-left"></i>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<!-- TASK LINE TEMPLATE -->
+		<script id="task-line-template" type="text/x-handlebars-template">
+			<div class="col-xs-offset-1 col-xs-9 task-line">{{tasks.description}}
+			</div>
+			<div class="col-xs-1">
+				<i class="fa fa-times-circle hide-input"></i>
+			</div>
+		</script>
+
+		<!-- SHOPPING LIST TEMPLATE 
+		<script id="shopping-line-template" type="text/x-handlebars-template">
+			<div class="col-xs-offset-1 col-xs-10">
+				<div class="row shopping-list">
+					<div class="col-xs-offset-1 col-xs-10 list-block">
+						<h3>List Item</h3>
+						<i class="fa fa-square-o chkbx"></i>
+					</div>
+				</div>
+			</div>
+		</script>-->
+
+
 	</section>
 
 	</div>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
 	<script src="main.js"></script>
 
 </body>

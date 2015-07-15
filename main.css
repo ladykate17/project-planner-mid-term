@@ -10,7 +10,6 @@ body {
 	box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 h1 {
 	font-size: 42px;
 	font-weight: 300;
@@ -18,13 +17,12 @@ h1 {
 }
 
 h2 {
-	padding: 20px;
-=======
-h3{
-	color: #666;
-	font-size: 16px;
+	padding: 20px 0px;
+}
+
+.task-title {
+	font-size: 20px;
 	font-weight: 700;
->>>>>>> a99058ddc5adf09cdb46d6f536c3e14b6178f428
 }
 
 .section{
@@ -87,14 +85,11 @@ ul li{
 }
 
 .intro{
-<<<<<<< HEAD
 	background-image: url('http://i.istockimg.com/file_thumbview_approve/58593320/6/stock-photo-58593320-office-desk-table-with-computer-supplies-and-flower.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
-=======
-	/*background-image: url('http://i.istockimg.com/file_thumbview_approve/58593320/6/stock-photo-58593320-office-desk-table-with-computer-supplies-and-flower.jpg');*/
->>>>>>> a99058ddc5adf09cdb46d6f536c3e14b6178f428
+/*	background-size: 100%, 100vh;
+*/	height: 100vh;
 	background-color: #B51267;
 }
 
@@ -113,9 +108,15 @@ ul li{
 	text-align: right;
 	padding: 10px;
 }
+
+.hide-input{
+	color: #B51267;
+	font-size: 18px;
+}
+
 .new-project-form{
 	display: none;
-	height: 90vh;
+	/*height: 90vh;*/
 	background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -124,7 +125,7 @@ ul li{
 }
 
 .project-block {
-	background-color: #DFDFDF;
+	background-color: #E3E3E3;
 	border-left: 4px solid #B51267;
 	box-shadow: 2px 2px 2px #CCC;
 	margin: 5px 0px;
@@ -132,15 +133,6 @@ ul li{
 
 .proj-title {
 	font-weight: 300;
-<<<<<<< HEAD
-=======
-}
-
-.proj-sub-info{
-	font-weight: 300;
-	font-size: 14px;
-	color:#666;
->>>>>>> a99058ddc5adf09cdb46d6f536c3e14b6178f428
 }
 
 .collapse-caret {
@@ -159,21 +151,22 @@ ul li{
 }
 
 .shopping-list{
-	background-color: #DFDFDF;
+	background-color: #E3E3E3;
 	box-shadow: 2px 2px 2px #CCC;
 	font-weight: 300;
 
 }
 .list-block {
-	border-bottom: 1px solid #CCC;
+	border-top: 1px solid #CCC;
 }
 
 .chkbx {
 	/*margin: 12px 0px;*/
-	font-size: 25px;
+	font-size: 26px;
+	color: #999;
+	text-align: right;
 }
 
-<<<<<<< HEAD
 .ex-pad{
 	padding: 0px 40px;
 }
@@ -182,10 +175,4 @@ ul li{
 	background-color: transparent;
 	color: white;
 }
-=======
-.x-out{
-	color: #B51267;
-}
-
->>>>>>> a99058ddc5adf09cdb46d6f536c3e14b6178f428
 
