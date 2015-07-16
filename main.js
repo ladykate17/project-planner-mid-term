@@ -1,11 +1,12 @@
 var projectBlockHtml = $('#project-block-template').html();
-var taskLineHtml = $('#task-line-template').html();
-console.log(taskLineHtml);
-console.log(projectBlockHtml);
-
 var projectBlockTemplate = Handlebars.compile(projectBlockHtml);  
 
+var taskLineHtml = $('#task-line-template').html();
 var taskLineTemplate = Handlebars.compile(taskLineHtml);  
+
+
+var shopLineHtml = $('#shop-line-template').html();
+var shopLineTemplate = Handlebars.compile(shopLineHtml);
 
 
 $(document).on('ready', function() {
@@ -97,20 +98,19 @@ $(document).on('ready', function() {
 		var budget 		= $('.proj-budget').val();
 		var description	= [this.tasks];
 
-		// new Project instance
+		// new project instance
 		var setProject 	= new Project(name, priority, budget);
 
 		var tasks = $( ".proj-task" ).each(function( index ) { // loop over 'task' inputs to grab val() and push to array
 			var setTask = new Task( $( this ).val() );
 			setProject.tasks.push(setTask);
 			console.log(setTask.description);
-			console.log(setTask.toString())
 		});
 
 		$('input').val(''); // clear/reset inputs
 		// add some sort of logic here to remove "added" task inputs 
 		$('.main').last().append(projectBlockTemplate(setProject));
-		// $('.tasks').last().append(taskLineTemplate(tasks);
+		$('.tasks').last().append(taskLineTemplate(this.tasks));
 
 
 		// $('.main').last().append(setProject.create());
@@ -142,6 +142,24 @@ $(document).on('ready', function() {
 		$('.list').slideDown('slow');
 	});
 
+	$('.edit-item').on('click', function(){
+		$(this).replaceWith('<input type="text" class="form-control" value="' + $(this).text() + '"/><input type="submit" style="display:none"/>');
+	});
+
+	$(document).on('click', '.add-list-item', function(){
+		console.log('click');
+		var listInput = '<div class="form-group"><div class="col-xs-offset-1 col-xs-9"><input type="text" class="form-control shop-list-item" placeholder="New list item"></div><div class="col-xs-1"><button class="btn btn-sm save-item">save</button></div></div>';
+
+		$(this).closest('.form-group').before(listInput);
+
+	})
+
+	$(document).on('click', '.save-item', function(){
+		$('input').val('');
+		var listItem = $('.shop-list-item').val();
+		console.log(listItem)
+		$('.list-items').last().append(shopLineTemplate(listItem));
+	});
 
 
 

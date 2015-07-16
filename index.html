@@ -56,6 +56,35 @@
 
 		<div class="row list"><!-- shopping list start -->
 			<h2>SHOPPING LIST</h2>
+			
+			<div class="row form-group">
+					<div class="col-sm-offset-2 col-sm-10 add-list-item">
+						<i class="fa fa-plus-circle"></i> Add a list item
+					</div>
+			</div>
+			<div class="row shopping-list list-items"></div>
+
+			<!-- <div class="col-xs-offset-1 col-xs-10">
+				<div class="row shopping-list">
+					<div class="col-xs-offset-1 col-xs-10 list-block">
+						<div class="col-xs-11">
+							<h3 class="edit-item list">List Item</h3>
+						</div>
+						<div class="col-xs-1 chkbx">
+							<i class="fa fa-square-o"></i>
+						</div>
+					</div>
+					<div class="col-xs-offset-1 col-xs-10 list-block">
+						<div class="col-xs-11">
+							<h3 class="edit-item list">List Item</h3>
+						</div>
+						<div class="col-xs-1 chkbx">
+							<i class="fa fa-square-o"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+ -->
 
 		</div>
 
@@ -109,9 +138,7 @@
 
 
 					<div class="form-group">
-						<div class="col-sm-2">
-						</div>
-						<div class="col-sm-10 add-task">
+						<div class="col-sm-offset-2 col-sm-10 add-task">
 							<i class="fa fa-plus-circle"></i> Add another task 
 						</div>
 					</div>
@@ -158,11 +185,7 @@
 							</div>
 						</div>
 						<div class="row tasks">
-						// 	<div class="col-xs-offset-1 col-xs-9 task-line">{{tasks}}
-						// 	</div>
-						// 	<div class="col-xs-1">
-						// 		<i class="fa fa-times-circle hide-input"></i>
-						// 	</div>
+
 						</div>
 					</div>
 					<div class="col-xs-1 collapse-caret">
@@ -174,24 +197,25 @@
 
 		<!-- TASK LINE TEMPLATE -->
 		<script id="task-line-template" type="text/x-handlebars-template">
-			<div class="col-xs-offset-1 col-xs-9 task-line">{{tasks.description}}
+		{{#each Project.tasks}}
+			<div class="col-xs-offset-1 col-xs-9 task-line">{{description}}
 			</div>
 			<div class="col-xs-1">
 				<i class="fa fa-times-circle hide-input"></i>
 			</div>
 		</script>
 
-		<!-- SHOPPING LIST TEMPLATE 
-		<script id="shopping-line-template" type="text/x-handlebars-template">
-			<div class="col-xs-offset-1 col-xs-10">
-				<div class="row shopping-list">
-					<div class="col-xs-offset-1 col-xs-10 list-block">
-						<h3>List Item</h3>
-						<i class="fa fa-square-o chkbx"></i>
-					</div>
+		<!-- SHOPPING LIST TEMPLATE -->
+		<script id="shop-line-template" type="text/x-handlebars-template">
+			<div class="col-xs-offset-1 col-xs-10 list-block">
+				<div class="col-xs-11">
+					<h3 class="edit-item list">{{ }}</h3>
+				</div>
+				<div class="col-xs-1 chkbx">
+					<i class="fa fa-square-o"></i>
 				</div>
 			</div>
-		</script>-->
+		</script>
 
 
 	</section>

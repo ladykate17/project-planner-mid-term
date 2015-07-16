@@ -152,10 +152,18 @@ ul li{
 
 .shopping-list{
 	background-color: #E3E3E3;
-	box-shadow: 2px 2px 2px #CCC;
-	font-weight: 300;
-
+/*	box-shadow: 2px 2px 2px #CCC;
+*/	font-weight: 300;
 }
+
+.add-list-item{
+	padding:20px 0px;
+}
+
+.list {
+	padding-bottom: 10px;
+}
+
 .list-block {
 	border-top: 1px solid #CCC;
 }
@@ -164,7 +172,7 @@ ul li{
 	/*margin: 12px 0px;*/
 	font-size: 26px;
 	color: #999;
-	text-align: right;
+	padding-top:14px;
 }
 
 .ex-pad{
