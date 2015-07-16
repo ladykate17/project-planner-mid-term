@@ -8,91 +8,96 @@
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<div class="continer-fulid">
+	<section class="continer-fulid">
+		<div class="row">
 
+			<div class="row section intro">
+				<div class="row padding"></div>
+				<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 intro-text">
+					<h1>PROJECT PLANNER</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<button class="btn btn-default btn-lg border-btn add-project-btn">start planning</button>
+				</div>
+			</div><!-- end row .intro -->
 
-		<div class="row section intro">
-			<div class="row padding"></div>
-			<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 intro-text">
-				<h1>PROJECT PLANNER</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				<button class="btn btn-default btn-lg border-btn add-project-btn">start planning</button>
-			</div>
-		</div>
+			<div class="row navi">
+				
+				<div id="navi">
+					<nav class="col-xs-12 navi-full">
+						<ul>
+							<li class="projects-btn btn"><i class="fa fa-pencil block nav-icon"></i>projects</li>
+							<li class="shop-list-btn btn"><i class="fa fa-list-ul block nav-icon"></i>shopping list</li>
+							<li class="budget-btn btn"><i class="fa fa-money block nav-icon"></i>budget</li>
+						</ul>
+					<nav class="col-xs-12 sub-navi">
+						<ul>
+							<li class="add-project-icon btn"><i class="fa fa-plus-circle nav-icon-sm inline"></i><span class="inline">add project</span></li>
+						</ul>
+					</nav>
+					</nav>
+				</div> <!-- end #navi -->
 
-		<div class="row navi">
-			
-			<div id="navi">
-				<nav class="col-xs-12 navi-full">
-					<ul>
-						<li class="projects-btn btn"><i class="fa fa-pencil block nav-icon"></i>projects</li>
-						<li class="shop-list-btn btn"><i class="fa fa-list-ul block nav-icon"></i>shopping list</li>
-						<li class="budget-btn btn"><i class="fa fa-money block nav-icon"></i>budget</li>
-					</ul>
-				<nav class="col-xs-12 sub-navi">
-					<ul>
-						<li class="add-project-icon btn"><i class="fa fa-plus-circle nav-icon-sm inline"></i><span class="inline">add project</span></li>
-					</ul>
-				</nav>
-				</nav>
+			</div><!-- end row .navi -->
 
-				<!-- <nav class="col-xs-4 navi-left">
-					<ul>
-						<li class="add-project-btn"><i class="fa fa-plus-circle block nav-icon"></i>add project</li>
-					</ul>
-				</nav>
-				<nav class="col-xs-8 navi-right">
-					<ul>
-						<li class="projects-btn"><i class="fa fa-pencil block nav-icon"></i>projects</li>
-						<li class="shop-list-btn"><i class="fa fa-list-ul block nav-icon"></i>shopping list</li>
-						<li class="budget-btn"><i class="fa fa-money block nav-icon"></i>budget</li>
-					</ul>
-				</nav>	 -->
-			</div>
+		</div><!-- end row -->
+	</section><!-- end container-fluid -->
 
-		</div>
 
 	<section class="container main">
+		<div id='shopping' class="row">
 
-		<div class="row list"><!-- shopping list start -->
-			<h2>SHOPPING LIST</h2>
-			
-			<div class="row form-group">
-					<div class="col-sm-offset-2 col-sm-10 add-list-item">
-						<i class="fa fa-plus-circle"></i> Add a list item
-					</div>
-			</div>
-			<div class="row shopping-list list-items"></div>
+			<div class="row new-list-form"><!-- new list form start -->
+				<div class="container-fluid ex-pad">
+					<h2>SHOPPING LIST</h2>
 
-			<!-- <div class="col-xs-offset-1 col-xs-10">
-				<div class="row shopping-list">
-					<div class="col-xs-offset-1 col-xs-10 list-block">
-						<div class="col-xs-11">
-							<h3 class="edit-item list">List Item</h3>
+					<form id="list-form" class="form-horizontal">
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Store Name</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control store-name" placeholder="Store Name">
+							</div>
 						</div>
-						<div class="col-xs-1 chkbx">
-							<i class="fa fa-square-o"></i>
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Item</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control list-item" placeholder="New Item">
+							</div>
 						</div>
-					</div>
-					<div class="col-xs-offset-1 col-xs-10 list-block">
-						<div class="col-xs-11">
-							<h3 class="edit-item list">List Item</h3>
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10 add-list-item">
+								<i class="fa fa-plus-circle"></i> Add a list item
+							</div>
 						</div>
-						<div class="col-xs-1 chkbx">
-							<i class="fa fa-square-o"></i>
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-custom btn-md submit-list">Add List</button>
+						    </div>
 						</div>
-					</div>
+
+					</form>
+
 				</div>
 			</div>
- -->
 
+		</div><!-- end #shopping -->
+
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-10 lists-containter"><!-- appended lists will go here-->
+			</div>
 		</div>
+
+
 
 		<div class="row new-project-form"><!-- new project form start -->
 			<div class="container-fluid ex-pad">
+
 				<div class="hide-form">[hide form]</div>
 				<h2>NEW PROJECT</h2>
-				<form class="form-horizontal">
+				<form id="project-form" class="form-horizontal">
 
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Project Name</label>
@@ -154,38 +159,84 @@
 			</div>
 		</div> <!-- new project form end-->
 
-		<!-- Event Post Template 
-		<script id="event-post-template" type="text/x-handlebars-template">
-			<div class="community-event">
-				<h3 class="event-title">{{postTitle}}</h3>
-				<p class="event-description">{{postDescription}}</p>
-				<p class="event-date">Date: {{postDate}}  <br> Time: {{postTime}}</p>
-				<a href="https://meetup.com" class="event-url">{{postUrl}}</a>
-				<div class="row row-top-margin">
-					<div class="col-xs-4">
-						<a class="user-hashtag" href="https://google.com">@jamiebinns</a>
-					</div>
-					<div class="col-xs-4"></div>
-					<div class="col-xs-4 content-likes"><i data-id={{dataId}} class="fa fa-heart-o fa-lg heart-like animated bounce"></i><span class="like-span">{{likes}} Likes</span></div>
-				</div>
-				<div class="break-div"></div>
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-10 projects-containter"><!-- appended projects will go here-->
 			</div>
-		</script>-->
+		</div>
+
+	</section> <!-- end section .main -->
+
 		
+	<!-- /// Project Templates /// -->
+
 		<!-- PROJECT BLOCK TEMPLATE -->
-		<script id="project-block-template" type="text/x-handlebars-template">
+		<script id="project-block-temp" type="text/x-handlebars-template">
 			<div class="row project-block">
-				<div class="col-xs-12 text-block">
-					<div class="col-xs-11 project">
-						<h2 class="proj-title">{{name}}</h2>
-						<p class="proj-sub-info"><strong>Priority Level: </strong>{{priority}}</p> <strong>Budget for this Project: </strong>${{budget}}.00</p>
+				<div class="col-xs-12">
+					<div class="col-xs-11 text-block">
+						<h2 class="block-title">{{name}}</h2>
+						<p class="proj-sub-info"><strong>Priority Level: </strong>{{priority}}</p> <strong>Budget for this Project: </strong>$ {{budget}} .00</p>
+					<div class="row items-block">	
 						<div class="row">
-							<div class="col-xs-12">
-								<h3 class="task-title">Tasks:</h3>
+							<div class="col-xs-offset-1 col-xs-10">
+								<h3 class="block-sub-title">Tasks:</h3>
 							</div>
 						</div>
-						<div class="row tasks">
+						<div class="row">
+							<div class="col-xs-offset-1 col-xs-10 tasks">
+							</div>
+						</div>
+					</div>
+					</div>
+					<div class="col-xs-1 collapse-caret">
+						<i class="fa fa-chevron-circle-left"></i>
+					</div>
+				</div>
+			</div>
+		</script>
 
+		<!-- TASK INPUT TEMPLATE -->
+		<script id="task-input-temp" type="text/x-handlebars-template">
+			<div class="form-group addl-task-input">
+				<div class="col-sm-offset-2 col-xs-9">
+					<input data-id="" type="text" class="form-control proj-task" placeholder="Task (i.e. Paint, Buy Furniture, Hang Décor, etc.)"></div>
+				<div class="col-xs-1">
+					<i class="fa fa-times-circle btn hide-input"></i>
+				</div>
+			</div>
+		</script>
+
+		<!-- TASK LINE TEMPLATE -->
+		<script id="task-line-temp" type="text/x-handlebars-template">
+			{{#each tasks}}
+			<div class="col-xs-offset-1 col-xs-9 task-line">{{description}}
+			</div>
+			<div class="col-xs-1">
+				<i class="fa fa-times-circle hide-input"></i>
+			</div>
+			{{/each}}
+		</script>
+
+
+
+	<!-- /// Shopping List Templates /// -->
+
+		<!-- LIST BLOCK TEMPLATE -->
+		<script id="list-block-temp" type="text/x-handlebars-template">
+			<div class="row list-block">
+				<div class="col-xs-12 ">
+					<div class="col-xs-11 text-block">
+							<h2 class="block-title">{{store}}</h2>
+						<div class="row items-block">
+							<div class="row">
+								<div class="col-xs-offset-1 col-xs-10">
+									<h3 class="block-sub-title">Items to get:</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-offset-1 col-xs-10 lists">
+							</div>
+						</div>
 						</div>
 					</div>
 					<div class="col-xs-1 collapse-caret">
@@ -195,33 +246,37 @@
 			</div>
 		</script>
 
-		<!-- TASK LINE TEMPLATE -->
-		<script id="task-line-template" type="text/x-handlebars-template">
-		{{#each Project.tasks}}
-			<div class="col-xs-offset-1 col-xs-9 task-line">{{description}}
+		<!-- LIST INPUT TEMPLATE -->
+		<script id="item-input-temp" type="text/x-handlebars-template">
+			<div class="form-group addl-shop-input">
+				<div class="col-sm-offset-2 col-xs-9">
+					<input data-id="" type="text" class="form-control list-item" placeholder="New Item"></div>
+				<div class="col-xs-1">
+					<i class="fa fa-times-circle btn hide-input"></i>
+				</div>
+			</div>
+		</script>
+
+		<!-- LIST LINE TEMPLATE -->
+		<script id="item-line-temp" type="text/x-handlebars-template">
+			{{#each listItems}}
+			<div class="col-xs-offset-1 col-xs-9 list-line">{{description}}
 			</div>
 			<div class="col-xs-1">
 				<i class="fa fa-times-circle hide-input"></i>
 			</div>
-		</script>
-
-		<!-- SHOPPING LIST TEMPLATE -->
-		<script id="shop-line-template" type="text/x-handlebars-template">
-			<div class="col-xs-offset-1 col-xs-10 list-block">
-				<div class="col-xs-11">
-					<h3 class="edit-item list">{{ }}</h3>
-				</div>
-				<div class="col-xs-1 chkbx">
-					<i class="fa fa-square-o"></i>
-				</div>
-			</div>
+			{{/each}}
 		</script>
 
 
-	</section>
+
+
+
+	
 
 	</div>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
 	<script src="main.js"></script>

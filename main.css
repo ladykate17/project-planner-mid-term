@@ -20,7 +20,7 @@ h2 {
 	padding: 20px 0px;
 }
 
-.task-title {
+.block-sub-title {
 	font-size: 20px;
 	font-weight: 700;
 }
@@ -114,7 +114,7 @@ ul li{
 	font-size: 18px;
 }
 
-.new-project-form{
+.new-project-form, .new-list-form{
 	display: none;
 	/*height: 90vh;*/
 	background-color: rgba(255, 255, 255, 0.9);
@@ -124,14 +124,14 @@ ul li{
 	color: #CB9512;
 }
 
-.project-block {
+.project-block, .list-block {
 	background-color: #E3E3E3;
 	border-left: 4px solid #B51267;
 	box-shadow: 2px 2px 2px #CCC;
 	margin: 5px 0px;
 }
 
-.proj-title {
+.block-title {
 	font-weight: 300;
 }
 
@@ -146,15 +146,11 @@ ul li{
 
 }
 
-.list{
-	display: none;
-}
-
-.shopping-list{
+/*.shopping-list{
 	background-color: #E3E3E3;
-/*	box-shadow: 2px 2px 2px #CCC;
-*/	font-weight: 300;
-}
+	box-shadow: 2px 2px 2px #CCC;
+	font-weight: 300;
+}*/
 
 .add-list-item{
 	padding:20px 0px;
@@ -162,10 +158,6 @@ ul li{
 
 .list {
 	padding-bottom: 10px;
-}
-
-.list-block {
-	border-top: 1px solid #CCC;
 }
 
 .chkbx {
@@ -182,5 +174,13 @@ ul li{
 .border-btn{
 	background-color: transparent;
 	color: white;
+}
+
+.rotated {
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -moz-transform: rotate(-90deg); /* Firefox */
+  -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+  -o-transform: rotate(-90deg); /* Opera */
 }
 
