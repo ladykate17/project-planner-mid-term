@@ -114,8 +114,12 @@ ul li{
 	font-size: 18px;
 }
 
-.new-project-form, .new-list-form{
+#projects,
+#shopping{
 	display: none;
+}
+
+.new-project-form, .new-list-form{
 	/*height: 90vh;*/
 	background-color: rgba(255, 255, 255, 0.9);
 }

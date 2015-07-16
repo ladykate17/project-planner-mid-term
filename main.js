@@ -70,7 +70,7 @@ $(document).on('ready', function() {
 
 
 
-	$(".dropdown-menu li a").on('click', function(){ // make dropdown button behave like select-dropdown
+	$(".dropdown-menu li a").on('click', function(){ // make dropdown button behave like select-dropdown for forms
 	  var selText = $(this).text();
 	  $(this).parents('.form-group').find('.proj-priority').text(selText);
 	  event.preventDefault();
@@ -79,15 +79,6 @@ $(document).on('ready', function() {
 
 
 	// --- Projects --- //
-	$(document).on('click', '.add-project-icon', function(){
-		console.log('click')
-		$('.new-project-form').slideDown('slow'); // Not working!!!! Need to reset display to visible?
-	});
-
-	$(document).on('click', '.hide-form', function(){
-		$(this).parent().slideUp('slow')
-	});
-
 	$(document).on('click', '.add-project-btn.btn', function(){
 		$('.navi').slideDown('slow');
 
@@ -95,8 +86,19 @@ $(document).on('ready', function() {
         	scrollTop: $("#navi").offset().top
     	}, 2000);
 
-		$('.new-project-form').slideDown('slow');
+		$('#projects').slideDown('slow');
 	});
+
+	$('.projects-btn').on('click', function(){
+		$('#shopping').slideUp('slow');
+		$('#projects').slideDown('slow');
+		// console.log('clicked')
+	});
+
+	$(document).on('click', '.hide-form', function(){
+		$(this).parent().slideUp('slow')
+	});
+
 
 	var counter = 1; // this starts at 1 because index 0 is preloaded
 
@@ -193,10 +195,9 @@ $(document).on('ready', function() {
 
 	// --- Shopping List --- //
 	$('.shop-list-btn').on('click', function(){
+		$('#projects').slideUp('slow');
 		// console.log('clicked')
-		$('.new-list-form').slideDown('slow');
-		$('.new-project-form').slideUp('slow');
-		$('.projects-containter').slideUp('slow');
+		$('#shopping').slideDown('slow');
 	});
 
 	// I may come back to this if time
