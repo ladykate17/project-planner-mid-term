@@ -1,3 +1,13 @@
+
+// localStorage.clear();
+// var pageState = function(){
+// 	setTimeout(function(){
+// 	$('.container').html(JSON.parse(localStorage["contents"]));
+// 	}, 500);
+// };
+
+// pageState();
+
 var projectBlockHtml = $('#project-block-temp').html();
 var projectBlockTemplate = Handlebars.compile(projectBlockHtml);  
 
@@ -6,6 +16,12 @@ var taskLineTemplate = Handlebars.compile(taskLineHtml);  
 
 var taskInputHtml = $('#task-input-temp').html();
 var taskInputTemplate = Handlebars.compile(taskInputHtml);
+
+var taskSubInputHtml = $('#addl-task-input-temp').html();
+var taskSubInputTemplate = Handlebars.compile(taskSubInputHtml);
+
+var taskSingleLineHtml = $('#single-line-task-temp').html();
+var taskSingleLineTemplate = Handlebars.compile(taskSingleLineHtml);
 
 var shopBlockHtml = $('#list-block-temp').html();
 var shopBlockTemplate = Handlebars.compile(shopBlockHtml);
@@ -16,6 +32,11 @@ var shopItemTemplate = Handlebars.compile(shopItemHtml);
 var shopInputHtml = $('#item-input-temp').html();
 var shopInputTemplate = Handlebars.compile(shopInputHtml);
 
+var shopSubInputHtml = $('#addl-item-input-temp').html();
+var shopSubInputTemplate = Handlebars.compile(shopSubInputHtml);
+
+var shopSingleLineHtml = $('#single-list-line-temp').html();
+var shopSingleLineTemplate = Handlebars.compile(shopSingleLineHtml);
 
 
 $(document).on('ready', function() {
@@ -79,6 +100,11 @@ $(document).on('ready', function() {
 
 
 	// --- Projects --- //
+	$(document).on('click', '.add-project-icon', function(){
+		$('#projects').slideDown('slow');
+		$('#shopping').slideUp('slow')
+	});
+
 	$(document).on('click', '.add-project-btn.btn', function(){
 		$('.navi').slideDown('slow');
 
@@ -111,8 +137,22 @@ $(document).on('ready', function() {
 
 	});
 
-	$(document).on('click', '.hide-input', function(){
-		$(this).closest('.form-group').slideUp('slow')
+	$(document).on('click', '.sub-add-task', function(){ // add additional input
+		var taskInput = taskSubInputTemplate();
+		$(this).closest('.form-group').before(taskInput);
+	});
+
+	// sub add task
+	$(document).on('click', '.add-task', function(){
+		event.preventDefault();
+		$('#addl-task')[0].reset();
+
+		// console.log('click');
+		var setNewTask = new Task( $( this ).parent().closest('.add-list-input').find('.list-item').val() );
+		console.log(setNewTask)
+		$('.addl-task').after(taskSingleLineTemplate(setNewTask));
+
+		$('#addl-task').remove();
 	});
 
 	// SUBMIT PROJECT
@@ -125,7 +165,6 @@ $(document).on('ready', function() {
 		var budget 		= $('.proj-budget').val();
 		var description	= [this.tasks];
 
-		// $('form')[0].reset(); // clear/reset inputs
 			if (priority === "Select One") {
 				priority = "No Priority Set";
 				var priorityID = 0;
@@ -143,8 +182,6 @@ $(document).on('ready', function() {
 				var priorityID = 1;
 			};
 
-		// console.log(budget);
-
 		// new project instance
 		var setProject 	= new Project(name, priority, priorityID, budget);
 
@@ -153,27 +190,30 @@ $(document).on('ready', function() {
 			setProject.tasks.push(setTask);
 			console.log(setTask.description);
 		});
-		console.log(AllProjects);
 
-
+		// Working on sorting and rendering by priority
+		// var sort = _.sortBy(AllProjects, 'priorityID');
+		// console.log(this.projectID)
+		// console.log(AllProjects[AllProjects.length - 1].priorityID)
+		// if (setProject.priorityID < AllProjects[AllProjects.length - 1].priorityID) {
+		// 	$('.projects-containter').append(projectBlockTemplate(setProject));
+		// 	$('.tasks').last().append(taskLineTemplate(setProject));
+		// }
+		// else{
+		// 	$('.projects-containter').prepend(projectBlockTemplate(setProject));
+		// 	$('.tasks').last().prepend(taskLineTemplate(setProject));
+	
+		// }
 
 		$('#project-form')[0].reset();
 		$('.btn-group button').removeClass('active');
 		$('div').remove('.addl-task-input')
 		$('.dropdown-menu').val(0);
-		// add some sort of logic here to remove "added" task inputs 
 		$('.projects-containter').append(projectBlockTemplate(setProject));
 		$('.tasks').last().append(taskLineTemplate(setProject));
-		$('.items-block').hide()
 
-		// SORT BY PRIORITY
-		_.indexBy(AllProjects, 'priorityID');
-		// var sortProjects = $( ".project-block" ).each(function( index ) { 
-		// 	var result = AllProjects.sort(function(a, b) { // sort the object in order of priority - high to low
-		// 		return b.priorityID - a.priorityID
-		// 		console.log(AllProjects);
-		// 	});
-		// });
+		// add some sort of logic here to remove "added" task inputs 
+		$('.items-block').hide()
 
 
 	}); // End Project Submit Click Event
@@ -200,16 +240,12 @@ $(document).on('ready', function() {
 		$('#shopping').slideDown('slow');
 	});
 
-	// I may come back to this if time
-	// $('.edit-item').on('click', function(){
-	// 	$(this).replaceWith('<input type="text" class="form-control" value="' + $(this).text() + '"/><input type="submit" style="display:none"/>');
-	// });
-
 	$(document).on('click', '.add-list-item', function(){ // add additional input
 		console.log('click');
 		var listInput = shopInputTemplate();
 		$(this).closest('.form-group').before(listInput);
 	});
+
 
 	$('.submit-list').on('click', function(){
 		event.preventDefault();
@@ -225,19 +261,9 @@ $(document).on('ready', function() {
 		});
 		console.log(AllShopLists);
 
-				// var setItem = "";
-
-				// var listItems = $( ".store-item" ).each(function( index ) { // loop over 'task' inputs to grab val() and push to array
-				// 	var newlistItem = new ShopList( $( this ).val() );
-				// 	setItem+= shopItemTemplate(newlistItem);
-				// 	console.log(newlistItem);
-				// 	setList.listItems.push(newlistItem);
-				// });
-		// var newlistItem = $('.shop-list-item').val();
-		// $('.main').last().append(shopBlockTemplate(---));
-		// $('.list').last().append(shopLineTemplate(---));
 
 		$('#list-form')[0].reset();
+		$('div').remove('.addl-shop-input');
 		$('.btn-group button').removeClass('active');
 		$('.lists-containter').append(shopBlockTemplate(setList));
 		$('.lists').append(shopItemTemplate(setList));
@@ -245,6 +271,35 @@ $(document).on('ready', function() {
 
 	});
 
+	$(document).on('click', '.sub-add-list-item', function(){ // add additional input
+		var listInput = shopSubInputTemplate();
+		$(this).closest('.form-group').before(listInput);
+	});
+
+	// sub add item
+	$(document).on('click', '.add-item', function(){
+		// console.log('click');
+		var setNewListItem = new ListItem( $( this ).parent().closest('.add-list-input').find('.list-item').val() );
+		console.log(setNewListItem)
+		$('.addl-list').before(shopSingleLineTemplate(setNewListItem));
+
+	})
+
+	$(document).on('click', '.remove-item', function(){
+		console.log('clicked')
+		$(this).closest('.task-line').fadeOut();
+		setTimeout(function(){ 
+			$(this).closest('.task-line').remove();
+		}, 500);
+	})
+
+	$(document).on('click', '.remove-item2', function(){
+		console.log('clicked')
+		$(this).closest('.list-line').fadeOut();
+		setTimeout(function(){ 
+			$(this).closest('.list-line').remove();
+		}, 500);
+	})
 
 
 });

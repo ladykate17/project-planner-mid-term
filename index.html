@@ -13,9 +13,11 @@
 
 			<div class="row section intro">
 				<div class="row padding"></div>
-				<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 intro-text">
-					<h1>PROJECT PLANNER</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 intro-text">
+					<h1>orderly.</h1>
+					<!-- <p class="sub-head">THE TIDY TO-DO LIST</p> -->
+					<p class="sub-head">- - -</p>
+					<p class="sub-text">The tidy to-do list and project manager that keeps you on task and on budget! This clean app will help you increase productivity by keeping all your shopping and project lists logically organzized and all in one place. </p>
 					<button class="btn btn-default btn-lg border-btn add-project-btn">start planning</button>
 				</div>
 			</div><!-- end row .intro -->
@@ -68,7 +70,7 @@
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10 add-list-item">
-								<i class="fa fa-plus-circle"></i> Add a list item
+								<i class="fa fa-plus-circle btn"></i> Add a list item
 							</div>
 						</div>
 
@@ -144,7 +146,7 @@
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10 add-task">
-								<i class="fa fa-plus-circle"></i> Add another task 
+								<i class="fa fa-plus-circle btn"></i> Add another task 
 							</div>
 						</div>
 						
@@ -208,17 +210,49 @@
 			</div>
 		</script>
 
+		<!-- ADDL TASK INPUT TEMPLATE -->
+		<script id="addl-task-input-temp" type="text/x-handlebars-template">
+			<form id="addl-task">
+			<div class="form-group addl-task-input">
+				<div class="col-xs-10">
+					<input data-id="" type="text" class="form-control task-item" placeholder="New Item"></div>
+				<div class="col-xs-1">
+					<button class="btn btn-sm btn-default add-task">add task</button>
+				</div>
+			</div>
+			</form>
+		</script>
+
 		<!-- TASK LINE TEMPLATE -->
 		<script id="task-line-temp" type="text/x-handlebars-template">
 			{{#each tasks}}
-			<div class="col-xs-offset-1 col-xs-9 task-line">{{description}}
-			</div>
-			<div class="col-xs-1">
-				<i class="fa fa-times-circle hide-input"></i>
+			<div class="row task-line">
+				<div class="col-xs-offset-1 col-xs-9">{{description}}
+				</div>
+				<div class="col-xs-1">
+					<i class="fa fa-times-circle btn remove-item"></i>
+				</div>
 			</div>
 			{{/each}}
+			<div class="row">
+				<div class="form-group">
+					<div class="col-xs-offset-1 col-xs-9 sub-add-task">
+						<i class="fa fa-plus-circle btn "></i> Add another task
+					</div>
+				</div>
+			</div>
 		</script>
 
+		<!-- single line template -->
+		<script id="single-line-task-temp" type="text/x-handlebars-template">
+			<div class="row task-line">
+				<div class="col-xs-offset-1 col-xs-9">{{description}}
+				</div>
+				<div class="col-xs-1">
+					<i class="fa fa-times-circle btn remove-item"></i>
+				</div>
+			</div>
+		</script>
 
 
 	<!-- /// Shopping List Templates /// -->
@@ -226,7 +260,6 @@
 		<!-- LIST BLOCK TEMPLATE -->
 		<script id="list-block-temp" type="text/x-handlebars-template">
 			<div class="row list-block">
-				<div class="col-xs-12 ">
 					<div class="col-xs-11 text-block">
 							<h2 class="block-title">{{store}}</h2>
 						<div class="row items-block">
@@ -254,7 +287,18 @@
 				<div class="col-sm-offset-2 col-xs-9">
 					<input data-id="" type="text" class="form-control list-item" placeholder="New Item"></div>
 				<div class="col-xs-1">
-					<i class="fa fa-times-circle btn hide-input"></i>
+					<i class="fa fa-times-circle btn remove-item2"></i>
+				</div>
+			</div>
+		</script>
+
+		<!-- ADDL LIST INPUT TEMPLATE -->
+		<script id="addl-item-input-temp" type="text/x-handlebars-template">
+			<div class="form-group addl-shop-input">
+				<div class="col-xs-10 add-list-input">
+					<input data-id="" type="text" class="form-control list-item" placeholder="New Item"></div>
+				<div class="col-xs-1">
+					<button class="btn btn-sm btn-default add-item">add item</button>
 				</div>
 			</div>
 		</script>
@@ -262,12 +306,32 @@
 		<!-- LIST LINE TEMPLATE -->
 		<script id="item-line-temp" type="text/x-handlebars-template">
 			{{#each listItems}}
-			<div class="col-xs-offset-1 col-xs-9 list-line">{{description}}
-			</div>
-			<div class="col-xs-1">
-				<i class="fa fa-times-circle hide-input"></i>
+			<div class="row list-line">
+				<div class="col-xs-offset-1 col-xs-9">{{description}}
+				</div>
+				<div class="col-xs-1">
+					<i class="fa fa-times-circle btn remove-item2"></i>
+				</div>
 			</div>
 			{{/each}}
+			<div class="row addl-list">
+				<div class="form-group">
+					<div class="col-xs-10 sub-add-list-item">
+						<i class="fa fa-plus-circle btn"></i> Add a list item
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<!-- single line template -->
+		<script id="single-list-line-temp" type="text/x-handlebars-template">
+			<div class="row list-line">
+				<div class="col-xs-offset-1 col-xs-9">{{description}}
+				</div>
+				<div class="col-xs-1">
+					<i class="fa fa-times-circle btn remove-item2"></i>
+				</div>
+			</div>
 		</script>
 
 

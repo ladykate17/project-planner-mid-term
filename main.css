@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
 
 body {
 /*	background-image: url('http://i.istockimg.com/file_thumbview_approve/58593320/6/stock-photo-58593320-office-desk-table-with-computer-supplies-and-flower.jpg');
@@ -11,9 +12,24 @@ body {
 }
 
 h1 {
-	font-size: 42px;
-	font-weight: 300;
+	font-family: 'Roboto Slab', serif;
+	font-size: 75px;
+	font-weight: 100;
 	padding: 20px 0px 10px;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 6px #222;
+}
+
+.sub-head{
+	font-weight: 300;
+	font-size: 16px;
+	text-shadow: 3px 3px 3px #222;
+}
+
+.sub-text{
+	font-size: 16px;
+	text-shadow: 3px 3px 3px #333;
+
 }
 
 h2 {
@@ -85,7 +101,7 @@ ul li{
 }
 
 .intro{
-	background-image: url('http://i.istockimg.com/file_thumbview_approve/58593320/6/stock-photo-58593320-office-desk-table-with-computer-supplies-and-flower.jpg');
+	background-image: url('desktop.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 /*	background-size: 100%, 100vh;
@@ -117,6 +133,7 @@ ul li{
 #projects,
 #shopping{
 	display: none;
+	padding-bottom: 70px;
 }
 
 .new-project-form, .new-list-form{
@@ -133,6 +150,7 @@ ul li{
 	border-left: 4px solid #B51267;
 	box-shadow: 2px 2px 2px #CCC;
 	margin: 5px 0px;
+	padding-bottom: 30px;
 }
 
 .block-title {
@@ -162,6 +180,11 @@ ul li{
 
 .list {
 	padding-bottom: 10px;
+}
+
+.list-line, .task-line{
+	padding: 10px 0px;
+	background-color: #ddd;
 }
 
 .chkbx {
