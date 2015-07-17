@@ -2,7 +2,7 @@
 // localStorage.clear();
 // var pageState = function(){
 // 	setTimeout(function(){
-// 	$('.container').html(JSON.parse(localStorage["contents"]));
+// 	$('.main').html(JSON.parse(localStorage["contents"]));
 // 	}, 500);
 // };
 
@@ -300,6 +300,6 @@ $(document).on('ready', function() {
 			$(this).closest('.list-line').remove();
 		}, 500);
 	})
-
+	// localStorage["contents"] = JSON.stringify($('.main').html());
 
 });

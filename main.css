@@ -27,7 +27,8 @@ h1 {
 }
 
 .sub-text{
-	font-size: 16px;
+	font-size: 18px;
+	font-weight: 300;
 	text-shadow: 3px 3px 3px #333;
 
 }
@@ -65,6 +66,7 @@ ul li{
 	background-color: #CB9512;
 	color: white;
 }
+
 
 .navi {
 	display: none;
@@ -134,10 +136,10 @@ ul li{
 #shopping{
 	display: none;
 	padding-bottom: 70px;
+	height: 90vh;
 }
 
 .new-project-form, .new-list-form{
-	/*height: 90vh;*/
 	background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -209,5 +211,17 @@ ul li{
   -moz-transform: rotate(-90deg); /* Firefox */
   -webkit-transform: rotate(-90deg); /* Safari and Chrome */
   -o-transform: rotate(-90deg); /* Opera */
+}
+
+.add-list-item:hover, .add-list-item:hover, .sub-add-task:hover, .add-task:hover, .sub-add-list-item:hover {
+	color: #B51267;
+}
+
+/*, 
+	color: #CB9512;
+*/}
+
+.fa-times-circle.xout {
+	color: #B51267;
 }
 
