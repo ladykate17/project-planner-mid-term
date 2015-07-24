@@ -300,6 +300,6 @@ $(document).on('ready', function() {
 			$(this).closest('.list-line').remove();
 		}, 500);
 	})
-	// localStorage["contents"] = JSON.stringify($('.main').html());
+	// localStorage["contents"] = JSON.stringify($('.main').html()); // working on local strage here
 
 });
